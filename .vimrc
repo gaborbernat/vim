@@ -17,6 +17,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim'
 Bundle 'slim-template/vim-slim'
 Bundle 'JuliaLang/julia-vim'
+Bundle 'Shougo/neocomplcache.vim'
 
 filetype plugin indent on
 
@@ -92,3 +93,6 @@ let g:ctrlp_max_depth = 5
 
 " Quit with :Q
 command -nargs=0 Quit :qa!
+
+" Enable auto completing stuff
+let g:neocomplcache_enable_at_startup = 1
