@@ -1,4 +1,4 @@
-set nocompatible
+  set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
@@ -18,6 +18,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'slim-template/vim-slim'
 Bundle 'JuliaLang/julia-vim'
 Bundle 'Shougo/neocomplcache.vim'
+Bundle 'freitass/todo.txt-vim'
 
 filetype plugin indent on
 
@@ -96,3 +97,12 @@ command -nargs=0 Quit :qa!
 
 " Enable auto completing stuff
 let g:neocomplcache_enable_at_startup = 1
+
+" F5 will insert date time
+:nnoremap <F5> "=strftime("%c")<CR>P
+:inoremap <F5> <C-R>=strftime("%c")<CR>
+
+" tab navigation like firefox
+:nnoremap <C-l> :tabprevious<CR>
+:nnoremap <C-r>   :tabnext<CR>
+:nnoremap <C-n>     :tabnew<CR>
