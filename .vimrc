@@ -1,4 +1,4 @@
-  set nocompatible
+set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
@@ -11,7 +11,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
-Bundle 'nanotech/jellybeans.vim'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim'
@@ -19,24 +19,28 @@ Bundle 'slim-template/vim-slim'
 Bundle 'JuliaLang/julia-vim'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'freitass/todo.txt-vim'
+Bundle 'scrooloose/nerdcommenter' 
+Bundle 'Chiel92/vim-autoformat'
+Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'elzr/vim-json'
 
 filetype plugin indent on
 
 let mapleader=","
 
-color jellybeans
 
 set cursorline
 set expandtab
 set modelines=0
 set shiftwidth=2
-set clipboard=unnamed
-set synmaxcol=128
+set clipboard=unnamedplus
+set synmaxcol=256
 set ttyscroll=10
 set encoding=utf-8
 set tabstop=2
 set nowrap
-set number
+set relativenumber
 set expandtab
 set nowritebackup
 set noswapfile
@@ -99,10 +103,19 @@ command -nargs=0 Quit :qa!
 let g:neocomplcache_enable_at_startup = 1
 
 " F5 will insert date time
-:nnoremap <F5> "=strftime("%c")<CR>P
-:inoremap <F5> <C-R>=strftime("%c")<CR>
+:nnoremap <F5> "=strftime("%Y-%m-%d %H:%M:%S")<CR>P
+:inoremap <F5> <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
 
 " tab navigation like firefox
 :nnoremap <C-l> :tabprevious<CR>
 :nnoremap <C-r>   :tabnext<CR>
 :nnoremap <C-n>     :tabnew<CR>
+
+:nmap n nzz  
+:nmap p pzz
+
+:set t_Co=256
+syntax enable
+set background=dark
+colorscheme solarized
+
