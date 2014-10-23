@@ -8,27 +8,23 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles
-Bundle 'tpope/vim-sensible'
+Bundle 'Lokaltog/vim-distinguished'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim'
-Bundle 'slim-template/vim-slim'
-Bundle 'JuliaLang/julia-vim'
 Bundle 'Shougo/neocomplcache.vim'
-Bundle 'freitass/todo.txt-vim'
-Bundle 'scrooloose/nerdcommenter' 
 Bundle 'Chiel92/vim-autoformat'
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'elzr/vim-json'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'pangloss/vim-javascript'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Raimondi/delimitMate'
+Bundle 'tpope/vim-fugitive'
+Bundle 'maksimr/vim-jsbeautify'
+Bundle 'einars/js-beautify'
 
 filetype plugin indent on
-
 let mapleader=","
-
 
 set cursorline
 set expandtab
@@ -115,7 +111,21 @@ let g:neocomplcache_enable_at_startup = 1
 :nmap p pzz
 
 :set t_Co=256
-syntax enable
+syntax on
 set background=dark
-colorscheme solarized
+colorscheme slate
 
+set cursorline
+hi CursorLine cterm=NONE ctermbg=8 ctermfg=white
+" Popup color.
+hi Pmenu ctermbg=8
+hi PmenuSel ctermbg=2
+hi PmenuSbar ctermbg=0
+
+map <c-f> :call JsBeautify()<cr>
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
+autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
