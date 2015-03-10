@@ -22,6 +22,9 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-fugitive'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
+Bundle 'tfnico/vim-gradle'
+Bundle 'rdolgushin/gitignore.vim'
+Bundle 'msanders/snipmate.vim'
 
 filetype plugin indent on
 let mapleader=","
