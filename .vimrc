@@ -10,7 +10,7 @@ Bundle 'gmarik/vundle'
 " My Bundles
 Bundle 'Lokaltog/vim-distinguished'
 Bundle 'tpope/vim-surround'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'Chiel92/vim-autoformat'
